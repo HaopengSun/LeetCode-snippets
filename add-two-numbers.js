@@ -77,3 +77,5 @@ const addTwoNumbers = function(arr1, arr2){
 }
 
 console.log(equalLengthArr(l1, l2))
+
+module.exports = { addTwoNumbers, equalLengthArr }
