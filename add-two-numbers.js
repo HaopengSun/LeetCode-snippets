@@ -41,6 +41,8 @@
 l1 = [9,9,9,9,9,9,9]
 l2 = [9,9,9,9]
 
+const equalArr = require('./equalArr')
+
 const equalLengthArr = function(arr1, arr2){
   const length1 = arr1.length
   const length2 = arr2.length

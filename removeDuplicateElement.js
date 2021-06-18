@@ -6,7 +6,6 @@ const removeDuplicateElement = function (arr) {
   const elements = [];
   const underscore = []
   for (const element of arr){
-    let result
     if (elements.includes(element)){
       underscore.push('_')
     } else {
