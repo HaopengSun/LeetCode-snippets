@@ -14,4 +14,6 @@ function flatten(arr) {
   }, []);
 }
 
-console.log(flatten(lists));
+module.exports = flatten;
+
+// console.log(flatten(lists));

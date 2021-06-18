@@ -1,4 +1,5 @@
 const str = "Hello World!"
+
 const camelcase = function(str){
   const wordArr = str.split(' ');
   let result = '';
@@ -15,4 +16,6 @@ const camelcase = function(str){
   }
   return result
 }
-console.log(camelcase(str))
+
+module.exports = camelcase;
+// console.log(camelcase(str))
