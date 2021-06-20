@@ -12,6 +12,7 @@ const searchInsertedPosition = function(nums, target) {
     if(nums[i] == target) return i;
     if(nums[i] < target && nums[i + 1] > target) return i + 1;
   }
+  return nums.length
 }
 
 const nums1 = [1,3,5,6]
