@@ -11,6 +11,7 @@ const wordBreak = (str, wordDict) => {
     current += arr[i]
     if (wordDict.includes(current)) {
       arr.splice(0, i + 1)
+      // reset the array
       current = ''
       i = -1
     }
