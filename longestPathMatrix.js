@@ -39,10 +39,12 @@ const matrix = [[3,4,5],[3,2,6],[2,2,1]]
 // const resultFirstPoint = [[0, 0]]
 
 const longest = function(position, step, matrix){
+  console.log(position)
   let nextStep = neighbour(step, matrix)
   // console.log(nextStep)
   if (nextStep.length !== 0){
     nextStep.map(step => {
+      // console.log(position, step)
       position.push(step)
       longest(position, step, matrix)
     })
