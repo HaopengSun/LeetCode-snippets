@@ -40,8 +40,8 @@ const deserialize = function(serilizedData) {
           return null
       }
       let root = new TreeNode(parseInt(val))
-      root.right=rebuild(data)
       root.left=rebuild(data)
+      root.right=rebuild(data)
       return root
   }
   return rebuild(data)
