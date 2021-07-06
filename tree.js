@@ -36,3 +36,23 @@ const helper = function(p, q) {
       return false
   return p.val === q.val && helper(p.left, q.right) && helper(p.right, q.left)
 }
+
+// Input: root = [3,9,20,null,null,15,7]
+// Output: [[3],[9,20],[15,7]]
+// traversal of a tree
+const levelOrder = function(root) {
+  const output = {}
+  const traversal = function(root, depth){
+    if (output[depth]) {
+      output[depth].push(root.val)
+    } else {
+      output[depth] = [root.val]
+    }
+    if (root.left) traversal(root.left, depth + 1)
+    if (root.right) traversal(root.right, depth + 1)
+  }
+  traversal(root, 1)
+  const result = []
+  for (const key in output) result.push(output[key])
+  return result
+};
