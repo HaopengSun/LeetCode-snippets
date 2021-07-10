@@ -27,9 +27,24 @@ const loopThrough = head => {
   next(head)
 }
 
-// loopThrough(head)
-// loopThrough(head1)
+// reverse a linked list
+// 0 -> 1 -> 2 -> 3 -> 4
+// 0 -> 4 -> 3 -> 2 -> 1
+const reverseLinkedList = head => {
+  let prev = null
+  current = head
+  let next = null
+  while (current !== null) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  node = prev;
+  loopThrough(node)
+}
 
+// add two linked lists
 const addTwoNum = (head, head1) => {
   const addictionHead = new ListNode()
   let current = addictionHead
@@ -47,8 +62,8 @@ const addTwoNum = (head, head1) => {
       next(node.next, node1.next)
     }
   }
-  next(head, head1)
-  loopThrough(addictionHead)
+  next(head.next, head1.next)
+  reverseLinkedList(addictionHead)
 }
 
 addTwoNum(head, head1)
