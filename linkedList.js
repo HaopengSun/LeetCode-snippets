@@ -29,7 +29,8 @@ const loopThrough = head => {
 
 // reverse a linked list
 // 0 -> 1 -> 2 -> 3 -> 4
-// 0 -> 4 -> 3 -> 2 -> 1
+// prev = null current = 0 next = null: 0 -> null
+// prev = 0 current = 1 next = 2: 2 -> 1 -> null
 const reverseLinkedList = head => {
   let prev = null
   current = head
