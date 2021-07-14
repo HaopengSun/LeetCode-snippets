@@ -18,8 +18,6 @@ const largestNum = nums => {
 
   for(let key in largest) largestIndividuals.push(Number(key))
 
-  console.log(largest, largestIndividuals)
-
   for (let i = largestIndividuals.length - 1; i >= 0; i--){
     for(let key in largest){
       if (Number(key) === largestIndividuals[i]){
@@ -28,7 +26,7 @@ const largestNum = nums => {
     }
   }
 
-  console.log(result)
+  return result
 }
 
 
