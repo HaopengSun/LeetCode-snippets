@@ -42,10 +42,12 @@ const gridTravel1 = (m, n) => {
 
 // recursion solution with saving
 const gridTravel2 = (m, n, memo = {}) => {
+  const key = m + ',' + n
   if (m === 1 && n === 1) return 1
   if (m === 0 || n === 0) return 0
-  memo = gridTravel1(m - 1, n, memo) + gridTravel1(m , n - 1, memo)
-  return memo
+  if (key in memo) return memo[key]
+  memo[key] = gridTravel1(m - 1, n, memo) + gridTravel1(m , n - 1, memo)
+  return memo[key]
 }
 
 console.log(gridTravel2(10, 10))
