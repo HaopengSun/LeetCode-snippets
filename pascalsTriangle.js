@@ -27,3 +27,11 @@ const pascalsTriangle = rowIndex => {
 
 // console.log(stepDownward([1, 2, 1]))
 console.log(pascalsTriangle(4))
+
+// recursive call method
+const pascalsTriangle1 = rowIndex => {
+  if (rowIndex === 1) return [1, 1]
+  return stepDownward(pascalsTriangle1(rowIndex - 1))
+}
+
+console.log(pascalsTriangle1(4))
