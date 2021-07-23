@@ -37,4 +37,15 @@ const gridTravel1 = (m, n) => {
   return gridTravel1(m - 1, n) + gridTravel1(m , n - 1)
 }
 
-console.log(gridTravel1(3, 3))
+// console.log(gridTravel1(3, 3))
+
+
+// recursion solution with saving
+const gridTravel2 = (m, n, memo = {}) => {
+  if (m === 1 && n === 1) return 1
+  if (m === 0 || n === 0) return 0
+  memo = gridTravel1(m - 1, n, memo) + gridTravel1(m , n - 1, memo)
+  return memo
+}
+
+console.log(gridTravel2(10, 10))
