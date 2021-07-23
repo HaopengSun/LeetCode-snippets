@@ -32,3 +32,19 @@ const canSum1 = (target, nums) => {
 }
 
 console.log(canSum1(7, [2, 3, 4, 7, 5]))
+
+
+// more efficent method using memo
+const canSum2 = (target, nums, memo = {}) => {
+  if (target in memo) return memo[remainder]
+  if (target === 0) return true
+  if (target < 0) return false
+  for (let num of nums){
+    let remainder = target - num
+    memo[remainder] = canSum2(remainder, nums, memo) 
+    if (memo[remainder] === true) return true
+  }
+  return false
+}
+
+console.log(canSum2(30, [2, 3, 4, 7, 5]))
