@@ -26,5 +26,15 @@ const gridTravel = (startPoint, grid) => {
   }
 }
 
-gridTravel([0, 0], grid)
-console.log(result)
+// gridTravel([0, 0], grid)
+// console.log(result)
+
+
+// recursion solution
+const gridTravel1 = (m, n) => {
+  if (m === 1 && n === 1) return 1
+  if (m === 0 || n === 0) return 0
+  return gridTravel1(m - 1, n) + gridTravel1(m , n - 1)
+}
+
+console.log(gridTravel1(3, 3))
