@@ -8,6 +8,7 @@ const canConstruct = (target, words) => {
       }
     }
   }
+  return false
 }
 
 const remainer = (prefix, word) => {
@@ -35,4 +36,4 @@ const allConbination = word => {
 // console.log(allConbination('abcdef'))
 
 
-console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']))
+console.log(canConstruct('abcdew', ['ab', 'abc', 'cd', 'def', 'abcd']))
