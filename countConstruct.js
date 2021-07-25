@@ -3,7 +3,6 @@ const canConstruct = (target, wordBank) => {
   if (target === '') return true
 
   for (let word of wordBank){
-    // to ensure the selected words in the wordBank are prefix to the target
     if (target.indexOf(word) === 0) {
       let suffix = target.slice(word.length)
       if (canConstruct(suffix, wordBank)) count++
@@ -14,3 +13,24 @@ const canConstruct = (target, wordBank) => {
 
 canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd', 'ef'])
 console.log(count)
+
+let count1 = 0
+const canConstruct1 = (target, wordBank, memo={}) => {
+  if (target === '') return true
+  if (memo[target]) {
+    count1++
+    return
+  }
+
+  for (let word of wordBank){
+    if (target.indexOf(word) === 0) {
+      let suffix = target.slice(word.length)
+      memo[target] = canConstruct1(suffix, wordBank, memo)
+      if (memo[target]) count1++
+    }
+  }
+
+}
+
+canConstruct1('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd', 'ef'])
+console.log(count1)
