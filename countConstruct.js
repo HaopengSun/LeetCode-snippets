@@ -34,3 +34,20 @@ const canConstruct1 = (target, wordBank, memo={}) => {
 
 canConstruct1('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd', 'ef'])
 console.log(count1)
+
+const countConstruct = (target, wordBank) => {
+  if (target === '') return 1
+
+  let count = 0
+
+  for (let word of wordBank){
+    if (target.indexOf(word) === 0) {
+      let suffix = target.slice(word.length)
+      count += countConstruct(suffix, wordBank)
+    }
+  }
+
+  return count
+}
+
+console.log(countConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd', 'ef']))
