@@ -37,4 +37,22 @@ const canSum1 = (target, nums) => {
   return found(target, grid)
 }
 
-console.log(canSum1(7, [5, 3, 4, 2, 5]))
+// console.log(canSum1(7, [5, 3, 4, 2, 5]))
+
+// build an array of (target + 1) elements and initialize them with false
+// true false false false false false false false // 0 = true
+// true false true false false false false false // 0 + 2 = true
+const canSum2 = (target, nums) => {
+  const arr = Array(target + 1).fill(false)
+  arr[0] = true
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] === true) {
+      for (let num of nums) {
+        if (num + i < arr.length) arr[num + i] = true
+      }
+    }
+  }
+  return arr[arr.length - 1]
+}
+
+console.log(canSum2(7, [5, 3, 4, 2]))
