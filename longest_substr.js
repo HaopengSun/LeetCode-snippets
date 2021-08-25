@@ -66,3 +66,16 @@ let height = [4,3,2,1,4]
 mostWater(height)
 height = [1,8,6,2,5,4,8,3,7]
 mostWater(height)
+
+const valid = {"(":")", "{":"}", "[":"]"}
+const isValid = str => {
+  for (let i = 0; i < str.length - 1; i++){
+    if (valid[str[i]] === str[i + 1]){
+      str.splice(i, 2)
+    }
+  }
+  console.log(str)
+}
+
+const s = "()[]{}"
+isValid(s)
